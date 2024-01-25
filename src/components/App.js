@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./Header";
-
 import ShoppingList from "./ShoppingList";
 import itemData from "../data/items";
 
@@ -20,7 +19,7 @@ function App() {
     //     </button>
     //   </header>
     <div>
-      <Header isDarkMode = { isDarkMode }onChangeDarkMode = { onDarkModeClick } />
+      <Header isDarkMode = { isDarkMode } onChangeDarkMode = { onDarkModeClick } />
       <ShoppingList items={itemData} />
     </div>
   );
