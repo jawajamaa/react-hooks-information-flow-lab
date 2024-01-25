@@ -19,8 +19,15 @@ function App() {
     //     </button>
     //   </header>
     <div>
-      <Header isDarkMode = { isDarkMode } onChangeDarkMode = { onDarkModeClick } />
-      <ShoppingList items={itemData} />
+      <Header 
+      isDarkMode = { isDarkMode } 
+      onChangeDarkMode = { onDarkModeClick } 
+      />
+      <ShoppingList 
+      items={ itemData } 
+      isDarkMode = { isDarkMode } 
+      onChangeDarkMode = { onDarkModeClick }
+      />
     </div>
   );
 }
