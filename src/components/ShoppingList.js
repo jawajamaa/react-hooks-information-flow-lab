@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import Filter from "./Filter";
 import Item from "./Item";
 
-function ShoppingList({ items, isDarkMode, onChangeDarkMode }) {
+function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  function handleCategoryChange(event) {
+  // function handleCategoryChange(event) {
+  //   setSelectedCategory(event.target.value);
+  // }
+
+  function onCategoryChange(event) {
+    // console.log(event);
     setSelectedCategory(event.target.value);
   }
 
@@ -15,23 +21,14 @@ function ShoppingList({ items, isDarkMode, onChangeDarkMode }) {
   });
 
   return (
-    <div className={"App " + (isDarkMode ? "dark" : "light")}>
       <div className="ShoppingList">
-        <div className="Filter">
-          <select name="filter" onChange={handleCategoryChange}>
-            <option value="All">Filter by category</option>
-            <option value="Produce">Produce</option>
-            <option value="Dairy">Dairy</option>
-            <option value="Dessert">Dessert</option>
-          </select>
-        </div>
+        <Filter onCategoryChange = { onCategoryChange } />
         <ul className="Items">
           {itemsToDisplay.map((item) => (
             <Item key={item.id} name={item.name} category={item.category} />
           ))}
         </ul>
       </div>
-    </div>
   );
 }
 
